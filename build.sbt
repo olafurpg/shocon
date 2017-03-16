@@ -50,7 +50,7 @@ lazy val shocon = crossProject(JSPlatform, JVMPlatform, NativePlatform)
     },
     compile in Compile <<= (compile in Compile) dependsOn fixResources,
     libraryDependencies ++= Seq(
-      "com.lihaoyi" %%% "fastparse" % "0.4.2",
+      "com.lihaoyi" %%% "fastparse" % "0.4.3-native",
       "org.scala-lang" % "scala-reflect" % scalaVersion.value % "provided"
     ),
     pomExtra := {
