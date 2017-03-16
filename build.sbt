@@ -13,7 +13,7 @@ val commonSettings = Vector(
 
 lazy val root = project.in(file(".")).
   settings(commonSettings: _*).
-  aggregate(shoconJS, shoconJVM)
+  aggregate(shoconJS, shoconJVM, shoconNative)
 
   lazy val fixResources = taskKey[Unit](
     "Fix application.conf presence on first clean build.")
