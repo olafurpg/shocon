@@ -1,10 +1,14 @@
 import SonatypeKeys._
+import sbtcrossproject.{crossProject, CrossType}
+
+
+enablePlugins(ScalaNativePlugin)
 
 val commonSettings = Vector(
   name := "shocon",
   organization := "eu.unicredit",
-  version := "0.1.7",
-  scalaVersion := "2.12.1",
+  version := "0.1.7-native",
+  scalaVersion := "2.11.8",
   crossScalaVersions  := Vector("2.11.8", "2.12.0", "2.12.1")
 )
 
