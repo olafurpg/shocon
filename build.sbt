@@ -2,7 +2,6 @@ import SonatypeKeys._
 import sbtcrossproject.{crossProject, CrossType}
 
 
-enablePlugins(ScalaNativePlugin)
 
 val commonSettings = Vector(
   name := "shocon",
@@ -19,7 +18,8 @@ lazy val root = project.in(file(".")).
   lazy val fixResources = taskKey[Unit](
     "Fix application.conf presence on first clean build.")
 
-lazy val shocon = crossProject.in(file(".")).
+lazy val shocon = crossProject(JSPlatform, JVMPlatform, NativePlatform)
+  .in(file(".")).
   settings(commonSettings: _*).
   settings(
     scalacOptions ++=
@@ -94,6 +94,7 @@ lazy val shocon = crossProject.in(file(".")).
 
 lazy val shoconJVM = shocon.jvm
 lazy val shoconJS = shocon.js
+lazy val shoconNative = shocon.native
 
 publishMavenStyle := true
 
